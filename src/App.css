@@ -13,112 +13,51 @@ body, h1, h3, p, input, button {
   color: #c9d1d9;
 }
 
-.event-list {
-  min-width: 500px;
-  margin: auto;
+h1 {
+  font-size: 2rem;
+  margin: 0;
+  padding: 20px 0;
 }
 
-.search {
-  width: 60%;
-  padding: 10px;
-  margin: 20px 0;
-  border-radius: 4px;
-  border: 1px solid #30363d;
-  background-color: #161b22;
-  color: #c9d1d9;
+/* Search Icon - Adjusted Size */
+.search-icon {
+  font-size: 1.8rem; /* Increase icon size on all screens */
 }
 
-/* Dark Grid Layout */
-.event-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content:space-around;
+/* Responsive Grid */
+.cards-container {
+  display: grid;
   gap: 20px;
 }
 
-.searchbar{
-  width: 100%;
-  
-}
-/* Event Card with Hover Effect */
-/* .event-card {
-  width: 20%;
-  background-color: #161b22;
-  border: 1px solid #30363d;
-  padding: 15px;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  cursor: pointer;
-}
+/* Mobile Layout */
+@media (max-width: 576px) {
+  .App {
+    padding: 30px 10px;
+  }
 
-.event-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.1);
-  background-color: #21262d;
-} */
+  h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 20px;
+  }
 
-/* Button Hover - Dark Mode */
-button {
-  background-color: #238636;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
+  .search-icon {
+    font-size: 1.5rem; /* Slightly smaller icon on mobile */
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr; /* One card per row */
+  }
+
+  .event-image {
+    height: 150px; /* Increased height for mobile view */
+  }
 }
 
-button:hover {
-  background-color: #2ea043;
-}
-
-/* Modal Backdrop and Content */
-.modal-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(13, 17, 23, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-content {
-  background-color: #161b22;
-  padding: 20px;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 400px;
-  position: relative;
-  color: #c9d1d9;
-  transition: opacity 0.3s ease;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  color: #f0f6fc;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-/* Loading Spinner in Dark Mode */
-.spinner {
-  border: 4px solid rgba(255, 255, 255, 0.1);
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border-left-color: #238636;
-  animation: spin 1s linear infinite;
-  margin: 20px auto;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
+/* Tablet Layout */
+@media (min-width: 577px) and (max-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 2-3 cards per row */
+  }
 }

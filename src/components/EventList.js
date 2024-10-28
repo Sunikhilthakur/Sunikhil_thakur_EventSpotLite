@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import events from '../data/events.json';
 import EventCard from './EventCard';
 import EventModal from './EventModal';
-import './EventList.css';  // Loading spinner CSS
+import './EventList.css';
+// import { FaSearch } from 'react-icons/fa'; // Font Awesome icon for search
 
 function EventList() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -10,7 +11,7 @@ function EventList() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1000);  // Simulate loading
+    setTimeout(() => setLoading(false), 1000);
   }, []);
 
   const filteredEvents = events.filter(event =>
@@ -19,18 +20,19 @@ function EventList() {
   );
 
   if (loading) {
-    return <div className="spinner"></div>;  // Show spinner while loading
+    return <div className="spinner"></div>;
   }
 
   return (
     <div className="event-list">
-      <div className='searchbar'>
-      <input
-        className='search'
-        type="text"
-        placeholder="Search events..."
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
+      <div className="searchbar">
+        {/* <FaSearch className="search-icon" /> */}
+        <input
+          className="search"
+          type="text"
+          placeholder="Search events..."
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </div>
       <div className="event-grid">
         {filteredEvents.map(event => (

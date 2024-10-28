@@ -1,0 +1,41 @@
+.event-card {
+    width: 20%;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  .event-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.1);
+    background-color: #141920;
+  }
+  
+  /* Event Image Styling */
+  .event-image {
+    width: 100%;
+    height: 150px; 
+    object-fit: cover; /* Crop to fit the area while preserving aspect ratio */
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  /* Title and Description Styling */
+  .event-card h3 {
+    color: #c9d1d9;
+    font-size: 1.2rem;
+    margin: 5px 0;
+    background-color: #161b22;
+  }
+  
+  .event-card p {
+    color: #8b949e;
+    font-size: 0.9rem;
+    margin: 0;
+    background-color: #161b22;
+  }
+  
